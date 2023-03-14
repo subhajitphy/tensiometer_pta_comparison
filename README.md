@@ -7,3 +7,4 @@ pip install tensiometer
 python -m ipykernel install --user --name tension
 ```
 
+Now run the jupyter notebook with kernal **tension**
