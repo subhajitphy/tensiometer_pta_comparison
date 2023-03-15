@@ -9,7 +9,7 @@ python -m ipykernel install --user --name tension
 
 Now run the jupyter notebook with kernal **tension**
 
-### How to connect to jupyter lav via ssh tunneling
+### How to connect to jupyter lab via ssh tunneling
 ```
 $ Login to iitr server with ssh -p 2299 username@gswarup.iitr.ac.in
 $ source /media/root1/3PAR/sdandapat/miniconda3/bin/activate
