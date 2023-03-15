@@ -19,6 +19,6 @@ $ jupyter notebook --no-browser --port xxxx
 <copy the token link>
 $ ctrl+a+d
 $ Come to your local system and type: 
-ssh -NfL localhost:xxxx:localhost:xxxx username@gswarup.iitr.ac.in
+ssh -NfL localhost:xxxx:localhost:xxxx -p 2299 username@gswarup.iitr.ac.in
 $ Now paste the token link to your browser
 ```
