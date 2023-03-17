@@ -13,6 +13,7 @@ Now run the jupyter notebook with kernal **tension**
 ```
 $ Login to iitr server with ssh -p 2299 username@gswarup.iitr.ac.in
 $ source /media/root1/3PAR/sdandapat/miniconda3/bin/activate
+$ pip install tensiometer
 $ screen -S <screenname>
 $ conda activate ptacomp
 $ jupyter notebook --no-browser --port xxxx
