@@ -9,7 +9,8 @@ mcmc_tension.n_threads = 1
 import warnings
 from tensorflow.keras.callbacks import ReduceLROnPlateau
 
-def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,boost=None,method=None):
+def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,
+                     boost=None,method=None):
     
     input_arr=[A1,A2]
 
@@ -30,23 +31,23 @@ def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,boost=None,method=None):
             return diff_chain, sig_n, chi_2, D_B
         else:
             return diff_chain, shift_probability, shift_lower, shift_upper
-    
+            
     if method=='ML' or len(A1.getMeans())>2:
-        
+
         if(MLinfo is None):
             batch_size = 8192
             epochs = 50
             steps_per_epoch = 64
             MLinfo=[batch_size,epochs,steps_per_epoch]
         diff_flow_callback = tensiometer.mcmc_tension.DiffFlowCallback(diff_chain, feedback=1, learning_rate=0.01)
-        
+
         callbacks = [ReduceLROnPlateau()]
 
         diff_flow_callback.train(batch_size=MLinfo[0], epochs=MLinfo[1], steps_per_epoch=MLinfo[2], callbacks=callbacks)
 
 
         exact_shift_P_1, exact_shift_low_1, exact_shift_hi_1 = diff_flow_callback.estimate_shift()
-        
+
         if exact_shift_P_1==1:
             sig_n, chi_2, D_B, chi2_probability=tension_chi2_approach(A1,A2)
             warnings.warn('Tension is higher than 4 sigma!! chi squared estimators will be used to compute the tension.')
@@ -58,6 +59,7 @@ def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,boost=None,method=None):
         
         
     
+
 def tension_chi2_approach(A1,A2):
     
     mean_1=A1.getMeans()
@@ -80,5 +82,3 @@ def tension_chi2_approach(A1,A2):
     
     
     return sig_n, chi_2, D_B, chi2_probability
-
-
