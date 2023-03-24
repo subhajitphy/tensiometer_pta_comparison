@@ -30,7 +30,7 @@ def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,
             warnings.warn('Tension is higher than 4 sigma!! chi squared estimators will be used to compute the tension.')
             return diff_chain, sig_n, chi_2, D_B
         else:
-            return diff_chain, shift_probability, shift_lower, shift_upper
+            return diff_chain, utilities.from_confidence_to_sigma(shift_probability), shift_lower, shift_upper
             
     if method=='ML' or len(A1.getMeans())>2:
 
@@ -53,7 +53,7 @@ def Diff_chain_shift(A1,A2,off_size=None,MLinfo=None,
             warnings.warn('Tension is higher than 4 sigma!! chi squared estimators will be used to compute the tension.')
             return diff_chain, sig_n, chi_2, D_B
         else:
-            return diff_chain, exact_shift_P_1, exact_shift_low_1, exact_shift_hi_1
+            return diff_chain, utilities.from_confidence_to_sigma(exact_shift_P_1), exact_shift_low_1, exact_shift_hi_1
         
         
         
