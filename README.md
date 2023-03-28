@@ -17,7 +17,7 @@ $ pip install tensiometer
 $ screen -S <screenname>
 $ python -m ipykernel install --user --name "kernal_name"
 $ conda activate ptacomp
-$ jupyter notebook --no-browser --port xxxx
+$ jupyter lab --no-browser --port xxxx
 <copy the token link>
 $ ctrl+a+d
 $ Come to your local system and type: 
