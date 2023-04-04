@@ -2,6 +2,7 @@
 ### On linux
 ```
 conda create -n tension python=3.9.16 anaconda
+conda install -c conda-forge jupyterlab
 conda activate tension
 pip install tensiometer
 python -m ipykernel install --user --name tension
