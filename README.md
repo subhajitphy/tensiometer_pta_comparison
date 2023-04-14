@@ -17,7 +17,7 @@ $ source /media/root1/3PAR/sdandapat/miniconda3/bin/activate
 $ pip install tensiometer
 $ screen -S <screenname>
 $ python -m ipykernel install --user --name "kernal_name"
-$ conda activate ptacomp
+$ conda activate tension
 $ jupyter lab --no-browser --port xxxx
 <copy the token link>
 $ ctrl+a+d
