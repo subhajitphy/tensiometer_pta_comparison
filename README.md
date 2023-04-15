@@ -14,7 +14,7 @@ Now run the jupyter notebook with kernal **tension**
 ```
 $ Login to iitr server with ssh -p 2299 username@gswarup.iitr.ac.in
 $ source /media/root1/3PAR/sdandapat/miniconda3/bin/activate
-$ pip install tensiometer
+$ pip install tensiometer or pip install tensiometer --upgrade (latest version is tensiometer-0.1.2)
 $ screen -S <screenname>
 $ python -m ipykernel install --user --name "kernal_name"
 $ conda activate tension
